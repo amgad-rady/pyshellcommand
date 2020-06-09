@@ -3,7 +3,7 @@ import shutil
 
 path = "C:\\programming\\extract-classes"
 output = "C:\\programming\\output"
-searchString = "invokedynamic"
+searchString = "java.lang.invoke.CallSite"
 
 for dirpath, dirs, files in os.walk(path):
     for file in files:

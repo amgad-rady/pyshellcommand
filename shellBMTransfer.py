@@ -4,10 +4,10 @@ import os
 inputDir = "C:\\programming\\output"
 outputDir = "C:\\programming\\output2"
 
-matchString = "[0-9]+: #[0-9]+ REF_.*:"
+matchString = "java.lang.invoke.CallSite .+;"
 
 outputFilePath = os.path.join(outputDir, "bootstrapMethods.bc")
-rawOutFilePath = os.path.join(outputDir, "raw_output.bc")
+rawOutFilePath = os.path.join(outputDir, "raw_output.txt")
 
 
 for dirpath, dirs, files in os.walk(inputDir):
@@ -19,7 +19,7 @@ for dirpath, dirs, files in os.walk(inputDir):
                 bmMatchList = re.search(matchString, line)
                 if bmMatchList is not None:
                     with open(outputFilePath, "a") as o:
-                        o.write(bmMatchList.group() + "\n")
+                        o.write(file + " " + bmMatchList.group() + "\n")
 
 set = set()
 
@@ -29,8 +29,9 @@ for dirpath, dirs, files in os.walk(outputDir):
         print(filePath)
         with open(filePath, "r") as f:
             for line in f:
-                bmMatch = re.split("REF_", line)[1]
-                set.add(bmMatch)
+                #bmMatch = re.split("", line)[1]
+                #set.add(bmMatch)
+                set.add(line)
 
 with open(rawOutFilePath, "a") as o:
     for s in set:
