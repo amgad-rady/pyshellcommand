@@ -1,3 +1,5 @@
+#Script to search the filtered files for specifc hits and copy uniques into a new directory.
+
 import re
 import os
 

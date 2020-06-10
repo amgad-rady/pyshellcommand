@@ -1,3 +1,5 @@
+#Script to unpack jmods
+
 import os
 
 source = "C:\\Program Files\\Java\\jdk-11\\jmods\\"
