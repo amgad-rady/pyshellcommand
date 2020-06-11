@@ -1,4 +1,4 @@
-#Script to disassemble Java .class files
+#Script to disassemble Java .class files into bytecode .bc files
 
 import re
 import os

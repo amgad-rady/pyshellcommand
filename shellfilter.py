@@ -5,7 +5,10 @@ import shutil
 
 path = "C:\\programming\\extract-classes"
 output = "C:\\programming\\output"
-searchString = "java.lang.invoke.CallSite"
+searchString = "CallSite"
+
+if not os.path.isdir(output):
+    os.makedirs(output)
 
 for dirpath, dirs, files in os.walk(path):
     for file in files:
